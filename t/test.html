@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <script type="text/javascript" src="/inc/Task/Joose/Core.js"></script>
+        <script type="text/javascript" src="/inc/JooseX/SimpleRequest.js"></script>
+        <script type="text/javascript" src="/inc/Task/JooseX/Namespace/Depended/Web.js"></script>
+    
+        <script type="text/javascript">
+            JooseX.Namespace.Depended.Manager.my.INC = [ '../blib/lib', '/inc' ]
+            
+            
+		    use('Request.flXHR', function () {
+		        
+		        setTimeout(function () {
+		            
+		            Request.flXHR.my.getText('http://api.flickr.com/services/rest/', true, function (success, text) {
+		                alert(text)
+		            })
+		            
+		        }, 2000)
+		        
+		    })    
+            
+        </script>
+        
+    </head>
+    
+    <body>
+    </body>
+</html>

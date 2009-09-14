@@ -1,0 +1,14 @@
+.gitignore
+Components.JS
+lib/Request/flXHR.js
+MANIFEST			This list of files
+README
+static/checkplayer.js
+static/flensed.js
+static/flXHR.js
+static/flXHR.swf
+static/flXHR.vbs
+static/swfobject.js
+static/updateplayer.swf
+t/010_basic.t.js
+t/index.html

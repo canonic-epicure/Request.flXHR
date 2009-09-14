@@ -8,12 +8,14 @@
         <link rel="stylesheet" type="text/css" href="/inc/Task/ExtJS/static/css/ext-all.css">
         <script type="text/javascript" src="/inc/Task/ExtJS/Adapter/Ext.js"></script>
 
+        <script type="text/javascript" src="/inc/JooseX/Meta/Lazy.js"></script>
         <script type="text/javascript" src="/inc/JooseX/Bridge/Ext.js"></script>
         <script type="text/javascript">
+            JooseX.Bridge.Ext.meta.extend({ does : JooseX.Meta.Lazy })
             Ext.extend = JooseX.Bridge.Ext.my.extend; 
         </script>
         
-        <script type="text/javascript" src="/inc/Task/ExtJS/All.js"></script>
+        <script type="text/javascript" src="/inc/Task/ExtJS/Debug/All.js"></script>
         
         <!-- eof Ext bridge  -->
         
@@ -28,18 +30,30 @@
     
     <body>
         <script type="text/javascript">
+            var INC = []
+            Joose.A.each([ '../blib/lib', '/inc' ], function (path) {
+                INC.push(Test.Run.Harness.Browser.Multi.my.resolveUrl(path, true))
+            }) 
+        
+        
             Test.Run.Harness.Browser.Multi.my.configure({
-                title : 'Advanced attribute test suite',
+                title : 'flXHR test suite',
+                
+                passThroughEx : true,
                 
                 preload : [
                     '/inc/Task/Joose/Core.js',
-                    '+Core'
+                    '/inc/JooseX/SimpleRequest.js',
+                    '/inc/Task/JooseX/Namespace/Depended/Web.js',
+                    {
+                        text : "JooseX.Namespace.Depended.Manager.my.INC = " + Ext.encode(INC)
+                    }
                 ]
             })    
             
             
             Test.Run.Harness.Browser.Multi.my.start(
-                '010_advanced_attribute.t.js'
+                '010_basic.t.js'
             )
         </script>
     </body>
