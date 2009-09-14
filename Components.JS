@@ -1,0 +1,7 @@
+COMPONENTS = {
+    
+	"Core" : [
+        "Request.flXHR"
+	]
+} 
+
