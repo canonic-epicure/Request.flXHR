@@ -6,7 +6,7 @@ my $build = Module::Build::JSAN::Installable->new(
 	create_makefile_pl => 'passthrough',
 	dist_version   => 0.01,
 	dist_author   => 'SamuraiJack',
-	dist_abstract  => "Drop-in replacement for native XHR, cross-domain capable (using flash)",
+	dist_abstract  => "JSAN wrapper for flXHR project",
 	license        => 'perl',
 );
 

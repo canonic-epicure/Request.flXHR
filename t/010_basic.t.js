@@ -1,6 +1,6 @@
 StartTest(function(t) {
     
-    t.plan(1)
+    t.plan(5)
     
     var async1 = t.beginAsync()
     var async2 = t.beginAsync()
@@ -24,30 +24,36 @@ StartTest(function(t) {
         t.ok(newReq, 'flXHR class was instantiated')
         
         
-        setTimeout(function () {
+        //===========================================================================================================================================================================================================
+        //t.diag('Same-domain XHR request')
+        
+        var req1 = new Request.flXHR()
+        req1.getText('http://catalyst-dev', true, function () {
+            
             //===========================================================================================================================================================================================================
             t.diag('Same-domain XHR request')
             
-            Request.flXHR.my.getText('http://catalyst-dev', true, function () {
-                
-                t.pass('Same-domain XHR was performed')
-                
-                t.endAsync(async1)
-            })
+            t.pass('Same-domain XHR was performed')
+            
+            t.endAsync(async1)
+        })
 
+        
+        //===========================================================================================================================================================================================================
+        //t.diag('Cross-domain XHR request')
+        
+        
+        var req2 = new Request.flXHR()
+        
+        req2.getText('http://api.flickr.com/services/rest/', true, function () {
             
             //===========================================================================================================================================================================================================
             t.diag('Cross-domain XHR request')
             
-            Request.flXHR.my.getText('http://api.flickr.com/services/rest/', true, function () {
-                
-                t.pass('Cross-domain XHR was performed')
-                
-                t.endAsync(async2)
-            })
+            t.pass('Cross-domain XHR was performed')
             
-            
-        }, 2000)
+            t.endAsync(async2)
+        })
         
 
         
