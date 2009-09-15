@@ -1,5 +1,10 @@
+'.externalToolBuilders/New_Builder (4).launch'
+'.externalToolBuilders/update build (Request.flXHR).launch'
 .gitignore
 Components.JS
+doc/html/Request/flXHR.html
+doc/pod/Request/flXHR.pod
+doc/text/Request/flXHR.txt
 lib/Request/flXHR.js
 MANIFEST			This list of files
 README
@@ -12,3 +17,6 @@ static/swfobject.js
 static/updateplayer.swf
 t/010_basic.t.js
 t/index.html
+t/test.html
+Makefile.PL
+META.json

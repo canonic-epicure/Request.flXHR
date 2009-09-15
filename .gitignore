@@ -5,3 +5,6 @@ blib
 .externalToolBuilders
 MANIFEST.bak
 doc
+Request.flXHR-*.tar.gz
+Makefile.PL
+META.json
