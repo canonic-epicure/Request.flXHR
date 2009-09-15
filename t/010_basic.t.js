@@ -28,7 +28,7 @@ StartTest(function(t) {
         //t.diag('Same-domain XHR request')
         
         var req1 = new Request.flXHR()
-        req1.getText('http://catalyst-dev', true, function () {
+        req1.getText('http://catalyst-dev', function () {
             
             //===========================================================================================================================================================================================================
             t.diag('Same-domain XHR request')
@@ -45,7 +45,7 @@ StartTest(function(t) {
         
         var req2 = new Request.flXHR()
         
-        req2.getText('http://api.flickr.com/services/rest/', true, function () {
+        req2.getText('http://api.flickr.com/services/rest/', function () {
             
             //===========================================================================================================================================================================================================
             t.diag('Cross-domain XHR request')
