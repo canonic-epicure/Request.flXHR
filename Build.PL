@@ -1,14 +1,12 @@
-use Module::Build::JSAN::Installable;
+use inc::Module::JSAN::DSL;
 
-my $build = Module::Build::JSAN::Installable->new(
+name            Request.flXHR
 
-	module_name    => 'Request.flXHR',
-	create_makefile_pl => 'passthrough',
-	dist_version   => 0.01,
-	dist_author   => 'SamuraiJack',
-	dist_abstract  => "JSAN wrapper for flXHR project",
-	license        => 'perl',
-);
+version         0.01
+author          'Nickolay (SamuraiJack) Platonov <root@symbie.org>'
 
-$build->create_build_script;
+abstract        'JSAN wrapper for flXHR project'
+license         bsd
 
+
+requires        Joose   3.001
